@@ -1,0 +1,63 @@
+// 거래량 기준 top 50
+const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin&category=layer-1&order=volume_desc&per_page=50&price_change_percentage=1h%2C24h%2C7d';
+
+
+// 시가총액 기준 top 50
+const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin&category=layer-1&order=market_cap_desc&per_page=50&price_change_percentage=1h%2C24h%2C7d';
+
+
+// 코인 정보
+const url = 'https://api.coingecko.com/api/v3/coins/id?localization=false';
+
+
+// 코인 OHLC - <Open High Low Close>
+const url = 'https://api.coingecko.com/api/v3/coins/id/ohlc?days=1';
+
+
+const options = {
+  method: 'GET',
+  headers: {accept: 'application/json', 'x-cg-demo-api-key': 'CG-vKYRWniSnjstaQdqQ9EJ2PC7'}
+};
+
+fetch(url, options)
+  .then(res => res.json())
+  .then(json => console.log(json))
+  .catch(err => console.error(err));
+
+
+// 1. 뒤로가기 기능
+// 2. chart, price
+// 3. dark light
+// 4. 코인 리스트 목록 가져오는 2가지 방법
+
+
+  {
+    "id": "bitcoin",
+    "symbol": "btc",
+    "name": "Bitcoin",
+    "image": "https://coin-images.coingecko.com/coins/images/1/large/bitcoin.png?1696501400",
+    "current_price": 80947,
+    "market_cap": 1605717559603,
+    "market_cap_rank": 1,
+    "fully_diluted_valuation": 1605717559603,
+    "total_volume": 30858272108,
+    "high_24h": 84252,
+    "low_24h": 80913,
+    "price_change_24h": -894.3120883554511,
+    "price_change_percentage_24h": -1.09275,
+    "market_cap_change_24h": -18191060439.1167,
+    "market_cap_change_percentage_24h": -1.1202,
+    "circulating_supply": 19836375,
+    "total_supply": 19836375,
+    "max_supply": 21000000,
+    "ath": 108786,
+    "ath_change_percentage": -25.57124,
+    "ath_date": "2025-01-20T09:11:54.494Z",
+    "atl": 67.81,
+    "atl_change_percentage": 119305.55929,
+    "atl_date": "2013-07-06T00:00:00.000Z",
+    "roi": null,
+    "last_updated": "2025-03-13T16:30:19.374Z"
+  },
+
+  
